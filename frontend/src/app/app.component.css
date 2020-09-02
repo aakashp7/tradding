@@ -1,0 +1,7 @@
+#mainToolbar .toolbar-spacer {
+    flex: 1 1 auto !important;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}

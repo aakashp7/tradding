@@ -1,0 +1,88 @@
+.closed-rest{
+ text-align: center;
+
+}
+.closed-rest img {
+    width: 14%;
+    margin: 23px 0px;
+}
+.closed-rest h3 {
+    font-size: 40px;
+    font-weight: 300;
+}
+.closed-rest h3  strong {
+    font-size: 39px;
+    font-weight: bold;
+}
+.closed-rest h2 {
+    font-size: 45px !important;
+    padding-top: 20px;
+line-height: 60px;
+}
+
+.close.mat-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    padding: 5px;
+    line-height: 14px;
+    min-width: auto;
+  }
+.image-popup .fixed-img img{
+    height: 75vh;    
+    width: auto;
+    margin: 0px auto;
+}
+.fixed-img img{ width: 100%; height: auto;}
+
+@media screen and (max-width:767px){
+
+
+    .closed-rest img {
+        width: 36%;
+        margin: 30px 0px;
+            margin-top: 30px;
+            margin-right: 0px;
+            margin-bottom: 30px;
+            margin-left: 0px;
+    }
+}
+.log-btn{
+    padding: 8px 30px;
+
+background-color:#e92222;
+color: #fff;
+}
+.ren-btn{
+    padding: 8px 30px;
+}
+.exp-not{
+    width: 254px !important;
+margin: 23px 0px;
+}
+.exp-ctn h2{
+    font-size: 42px !important;
+    margin-top: 10px;
+}
+.exp-ctn h3{
+    font-size: 25px;
+margin: 28px;
+}
+.exp-ctn h5{
+    font-size: 24px;
+
+margin: 39px;
+}
+.not-img{
+    background-color:
+#e1e1e1;
+
+border-radius: 13px;
+margin-left: 2px;
+}
+.btn-css{
+    padding: 4px 27px;
+
+font-size: 17px;
+}

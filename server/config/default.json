@@ -1,0 +1,31 @@
+/*{
+"btc":{
+        "protocol": "",
+        "path": "/",
+        "port": ,
+        "host":"1",
+        "username": "",
+        "password": ""
+    }
+}
+
+{
+"btc":{
+        "protocol": "",
+        "path": "/",
+        "port": ,
+        "host":"",
+        "username": "",
+        "password": ""
+    }
+}*/
+{
+"btc":{
+        "protocol": "",
+        "path": "/",
+        "port": ,
+        "host":"",
+        "username": "",
+        "password": ""
+    }
+}

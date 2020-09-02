@@ -1,0 +1,115 @@
+<div *ngIf="timesUp" class="closed-rest">
+
+    <h2 mat-dialog-title>Registration Notice</h2>
+    <mat-dialog-content>
+        <img src="assets/images/sad_smily.png">
+        <h3>Sorry! Our Registrations are <strong>Closed</strong>...</h3>
+    </mat-dialog-content>
+
+</div>
+
+
+<div *ngIf="noPlans" class="closed-rest">
+    <h2 mat-dialog-title>Admin Notification</h2>
+    <mat-dialog-content>
+        <img src="assets/images/sad_smily.png">
+        <h3>Sorry! We're not <strong>Active</strong>...</h3>
+    </mat-dialog-content>
+
+</div>
+
+<div *ngIf="articleRead">
+    <button class="close" mat-icon-button (click)="close()">
+        <mat-icon mat-list-icon>close</mat-icon>
+    </button>
+    <h2 mat-dialog-title class="closed-rest">{{articletitle}}</h2>
+    <div>
+        <label [innerHtml]="safeHtml(articlesafe)"></label>
+    </div>
+</div>
+
+<div *ngIf="imgShow" class="image-popup">
+    <button class="close" mat-icon-button (click)="close()">
+        <mat-icon mat-list-icon>close</mat-icon>
+    </button>
+    <div class="fixed-img text-center"><img src="{{imgPop}}"></div>
+</div>
+
+<div *ngIf="paymentStatus" class="closed-rest">
+    <h2 mat-dialog-title>Payment Notification</h2>
+    <mat-dialog-content>
+        <img *ngIf="renewReq" src="assets/images/subs-exp.png">
+        <img *ngIf="!renewReq" src="assets/images/renew-success.png">
+        <div *ngIf="renewReq">
+
+            <h3 >Your subscription has expired...</h3>
+            <span>To keep using Mixed Trading Arts without interruption, choose an option below to reactive. </span>
+        </div>
+
+        <form class="my-form form-data" [formGroup]="renewPlanFrom" *ngIf="renewReq">
+            <mat-card class="row custom-card-width box-shadow">
+                <mat-form-field class="col-md-12 mt-3">
+                    <mat-select placeholder="Select Mixed Trading Arts Plan" matNativeControl required
+                        formControlName="plan">
+
+                        <mat-option *ngFor="let item of membershipPlans" value="{{item.fullplan}}">
+                            {{item.fullplan}} <span class="spn-price">{{item.amount}}
+                                BTC</span>
+                        </mat-option>
+                    </mat-select>
+
+                    <mat-error *ngIf="fc.plan.hasError('required')">
+                        This field is required
+                    </mat-error>
+                </mat-form-field>
+
+
+              
+            </mat-card>
+            <div class="mt-35">
+
+                <button mat-raised-button [disabled]="!renewPlanFrom.valid" (click)="renewPlan()"
+                    [ngClass]="{'grad-css': renewPlanFrom.valid}" class="ren-btn">Renew</button>
+                    <button mat-raised-button (click)="logout()" class="ml-2 log-btn">Logout</button>
+            </div>
+        </form>
+        <form *ngIf="!renewReq">
+            <div>
+                <h1>
+                    Thank you for renew your membership
+                </h1>
+                <h4>
+                    Please check your email for further instructions..
+                </h4>
+            </div>
+            
+        </form>
+
+    </mat-dialog-content>
+
+</div> 
+
+<div *ngIf="expiryStatus">
+   
+    <mat-dialog-content>
+        <div class="row text-center">
+
+            <div class="col-md-4">
+                <div class="not-img">
+
+                    <img src="assets/images/notification.png" class="exp-not">
+                </div>
+            </div>
+            <div class="col-md-8 text-center exp-ctn" >
+                    <h2 mat-dialog-title>Mixed Trading Arts Expiry Notification</h2>
+                <h3>Your subscription is about to expire in <strong>{{remainingDays}} Days</strong>...</h3>
+                <h5>We just want to remind you that after <strong>{{expiryDate | date:'mediumDate'}}</strong>, you'll need to subscribe again. </h5>
+        
+                <button mat-raised-button  (click)="renewPage()"
+                 class="grad-css btn-css">Renew</button>
+                <button mat-raised-button (click)="close()" class="ml-2  btn-css">Cancel</button>
+            </div>
+        </div>
+    </mat-dialog-content>
+
+</div>
